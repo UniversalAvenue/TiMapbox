@@ -143,6 +143,54 @@
     [mapView setZoom:[TiUtils floatValue:value] animated:true];
 }
 
+-(void)setRegion_:(id)args
+{
+    ENSURE_DICT(args);
+    NSDictionary *region = (NSDictionary *) args;
+    
+    NSLog(@"args = %@", args);
+    
+    CLLocationDegrees latitude = [(NSString *)[region valueForKey:@"latitude"] doubleValue];
+    CLLocationDegrees longitude = [(NSString *)[region valueForKey:@"longitude"] doubleValue];
+    CLLocationDegrees latitudeDelta = [(NSString *)[region valueForKey:@"longitudeDelta"] doubleValue];
+    CLLocationDegrees longitudeDelta = [(NSString *)[region valueForKey:@"latitudeDelta"] doubleValue];
+
+    RMSphericalTrapezium bounds;
+    bounds.northEast.latitude = latitude - latitudeDelta / 2;
+    bounds.northEast.longitude = longitude + longitudeDelta / 2;
+    bounds.southWest.latitude = latitude + latitudeDelta / 2;
+    bounds.southWest.longitude = longitude - longitudeDelta / 2;
+    
+    NSLog(@"setRegion with bounds: northEast.latitude: %d, northEast.longitude: %d, southWest.latitude: %d, southWest.longitude: %d, from latitude: %d, longitude: %d, latitudeDelta: %d, longitudeDelta: %d",
+          bounds.northEast.latitude, bounds.northEast.longitude, bounds.southWest.latitude, bounds.southWest.longitude,
+          latitude, longitude, latitudeDelta, longitudeDelta);
+    
+    [mapView zoomWithLatitudeLongitudeBoundsSouthWest:bounds.southWest
+                                            northEast:bounds.northEast
+                                             animated:[TiUtils boolValue:@"animated"
+                                                              properties:region
+                                                                     def:YES]];
+}
+
+-(id)getRegion_
+{
+    RMSphericalTrapezium bounds = [mapView latitudeLongitudeBoundingBox];
+
+    NSLog(@"getRegion with bounds: northEast.latitude: %d, northEast.longitude: %d, southWest.latitude: %d, southWest.longitude: %d", bounds.northEast.latitude, bounds.northEast.longitude, bounds.southWest.latitude, bounds.southWest.longitude)
+    
+    CLLocationDegrees latitude = bounds.northEast.latitude + bounds.southWest.latitude / 2;
+    CLLocationDegrees longitude = bounds.northEast.longitude + bounds.southWest.longitude / 2;
+    CLLocationDegrees latitudeDelta = fabs(bounds.northEast.latitude - bounds.southWest.latitude);
+    CLLocationDegrees longitudeDelta = fabs(bounds.northEast.longitude - bounds.southWest.longitude);
+    
+    return @{
+             @"longitude":      [NSNumber numberWithDouble:longitude],
+             @"latitude":       [NSNumber numberWithDouble:latitude],
+             @"longitudeDelta": [NSNumber numberWithDouble:longitudeDelta],
+             @"latitudeDelta":  [NSNumber numberWithDouble:latitudeDelta],
+             };
+}
+
 #pragma mark Public Methods
 -(void)clearTileCache:(id)args
 {
