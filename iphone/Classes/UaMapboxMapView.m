@@ -393,7 +393,7 @@
 
 - (RMMapLayer *)markerLayer:(RMMapView *)mapView userInfo:(NSDictionary *)userInfo
 {
-    RMMarker *marker = [[RMMarker alloc] initWithMapBoxMarkerImage:nil tintColor:([TiUtils isIOS7OrGreater] ? mapView.tintColor : nil)];
+    RMMarker *marker = [[RMMarker alloc] initWithMapboxMarkerImage:nil tintColor:([TiUtils isIOS7OrGreater] ? mapView.tintColor : nil)];
     NSDictionary *args = [userInfo objectForKey:@"args"];
     
     marker.canShowCallout = YES;
