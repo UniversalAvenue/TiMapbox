@@ -1,0 +1,559 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		24416B8111C4CA220047AFDD /* Build & Test */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 24416B8A11C4CA520047AFDD /* Build configuration list for PBXAggregateTarget "Build & Test" */;
+			buildPhases = (
+				24416B8011C4CA220047AFDD /* ShellScript */,
+			);
+			dependencies = (
+				24416B8511C4CA280047AFDD /* PBXTargetDependency */,
+			);
+			name = "Build & Test";
+			productName = "Build & test";
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		24DD6CF91134B3F500162E58 /* UaMapboxModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 24DD6CF71134B3F500162E58 /* UaMapboxModule.h */; };
+		24DD6CFA1134B3F500162E58 /* UaMapboxModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DD6CF81134B3F500162E58 /* UaMapboxModule.m */; };
+		24DE9E1111C5FE74003F90F6 /* UaMapboxModuleAssets.h in Headers */ = {isa = PBXBuildFile; fileRef = 24DE9E0F11C5FE74003F90F6 /* UaMapboxModuleAssets.h */; };
+		24DE9E1211C5FE74003F90F6 /* UaMapboxModuleAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DE9E1011C5FE74003F90F6 /* UaMapboxModuleAssets.m */; };
+		AA747D9F0F9514B9006C5449 /* UaMapbox_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* UaMapbox_Prefix.pch */; };
+		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+		BB4707521A1217CD00D549F7 /* UaMapboxMapViewProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = BB4707501A1217CD00D549F7 /* UaMapboxMapViewProxy.h */; };
+		BB4707531A1217CD00D549F7 /* UaMapboxMapViewProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4707511A1217CD00D549F7 /* UaMapboxMapViewProxy.m */; };
+		BB4707561A1217EF00D549F7 /* UaMapboxMapView.h in Headers */ = {isa = PBXBuildFile; fileRef = BB4707541A1217EF00D549F7 /* UaMapboxMapView.h */; };
+		BB4707571A1217EF00D549F7 /* UaMapboxMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4707551A1217EF00D549F7 /* UaMapboxMapView.m */; };
+		BB4707931A1219E900D549F7 /* libMapbox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB4707921A1219CF00D549F7 /* libMapbox.a */; };
+		BB4707941A1219F700D549F7 /* Mapbox.h in Headers */ = {isa = PBXBuildFile; fileRef = BB47075A1A1219CF00D549F7 /* Mapbox.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		24416B8411C4CA280047AFDD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = TiMapbox;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		24DD6CF71134B3F500162E58 /* UaMapboxModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UaMapboxModule.h; path = Classes/UaMapboxModule.h; sourceTree = "<group>"; };
+		24DD6CF81134B3F500162E58 /* UaMapboxModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UaMapboxModule.m; path = Classes/UaMapboxModule.m; sourceTree = "<group>"; };
+		24DD6D1B1134B66800162E58 /* titanium.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = titanium.xcconfig; sourceTree = "<group>"; };
+		24DE9E0F11C5FE74003F90F6 /* UaMapboxModuleAssets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UaMapboxModuleAssets.h; path = Classes/UaMapboxModuleAssets.h; sourceTree = "<group>"; };
+		24DE9E1011C5FE74003F90F6 /* UaMapboxModuleAssets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UaMapboxModuleAssets.m; path = Classes/UaMapboxModuleAssets.m; sourceTree = "<group>"; };
+		AA747D9E0F9514B9006C5449 /* UaMapbox_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UaMapbox_Prefix.pch; sourceTree = SOURCE_ROOT; };
+		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BB4707501A1217CD00D549F7 /* UaMapboxMapViewProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UaMapboxMapViewProxy.h; path = Classes/UaMapboxMapViewProxy.h; sourceTree = "<group>"; };
+		BB4707511A1217CD00D549F7 /* UaMapboxMapViewProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UaMapboxMapViewProxy.m; path = Classes/UaMapboxMapViewProxy.m; sourceTree = "<group>"; };
+		BB4707541A1217EF00D549F7 /* UaMapboxMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UaMapboxMapView.h; path = Classes/UaMapboxMapView.h; sourceTree = "<group>"; };
+		BB4707551A1217EF00D549F7 /* UaMapboxMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UaMapboxMapView.m; path = Classes/UaMapboxMapView.m; sourceTree = "<group>"; };
+		BB47075A1A1219CF00D549F7 /* Mapbox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Mapbox.h; sourceTree = "<group>"; };
+		BB47075B1A1219CF00D549F7 /* RMAbstractMercatorTileSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMAbstractMercatorTileSource.h; sourceTree = "<group>"; };
+		BB47075C1A1219CF00D549F7 /* RMAbstractWebMapSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMAbstractWebMapSource.h; sourceTree = "<group>"; };
+		BB47075D1A1219CF00D549F7 /* RMAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMAnnotation.h; sourceTree = "<group>"; };
+		BB47075E1A1219CF00D549F7 /* RMAttributionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMAttributionViewController.h; sourceTree = "<group>"; };
+		BB47075F1A1219CF00D549F7 /* RMBingSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMBingSource.h; sourceTree = "<group>"; };
+		BB4707601A1219CF00D549F7 /* RMCacheObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMCacheObject.h; sourceTree = "<group>"; };
+		BB4707611A1219CF00D549F7 /* RMCircle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMCircle.h; sourceTree = "<group>"; };
+		BB4707621A1219CF00D549F7 /* RMCircleAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMCircleAnnotation.h; sourceTree = "<group>"; };
+		BB4707631A1219CF00D549F7 /* RMCompositeSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMCompositeSource.h; sourceTree = "<group>"; };
+		BB4707641A1219CF00D549F7 /* RMConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMConfiguration.h; sourceTree = "<group>"; };
+		BB4707651A1219CF00D549F7 /* RMCoordinateGridSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMCoordinateGridSource.h; sourceTree = "<group>"; };
+		BB4707661A1219CF00D549F7 /* RMDatabaseCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMDatabaseCache.h; sourceTree = "<group>"; };
+		BB4707671A1219CF00D549F7 /* RMDBMapSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMDBMapSource.h; sourceTree = "<group>"; };
+		BB4707681A1219CF00D549F7 /* RMFoundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMFoundation.h; sourceTree = "<group>"; };
+		BB4707691A1219CF00D549F7 /* RMFractalTileProjection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMFractalTileProjection.h; sourceTree = "<group>"; };
+		BB47076A1A1219CF00D549F7 /* RMGenericMapSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMGenericMapSource.h; sourceTree = "<group>"; };
+		BB47076B1A1219CF00D549F7 /* RMGlobalConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMGlobalConstants.h; sourceTree = "<group>"; };
+		BB47076C1A1219CF00D549F7 /* RMGreatCircleAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMGreatCircleAnnotation.h; sourceTree = "<group>"; };
+		BB47076D1A1219CF00D549F7 /* RMInteractiveSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMInteractiveSource.h; sourceTree = "<group>"; };
+		BB47076E1A1219CF00D549F7 /* RMLoadingTileView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMLoadingTileView.h; sourceTree = "<group>"; };
+		BB47076F1A1219CF00D549F7 /* RMMapboxSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMMapboxSource.h; sourceTree = "<group>"; };
+		BB4707701A1219CF00D549F7 /* RMMapLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMMapLayer.h; sourceTree = "<group>"; };
+		BB4707711A1219CF00D549F7 /* RMMapOverlayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMMapOverlayView.h; sourceTree = "<group>"; };
+		BB4707721A1219CF00D549F7 /* RMMapQuestOpenAerialSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMMapQuestOpenAerialSource.h; sourceTree = "<group>"; };
+		BB4707731A1219CF00D549F7 /* RMMapQuestOSMSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMMapQuestOSMSource.h; sourceTree = "<group>"; };
+		BB4707741A1219CF00D549F7 /* RMMapScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMMapScrollView.h; sourceTree = "<group>"; };
+		BB4707751A1219CF00D549F7 /* RMMapTiledLayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMMapTiledLayerView.h; sourceTree = "<group>"; };
+		BB4707761A1219CF00D549F7 /* RMMapView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMMapView.h; sourceTree = "<group>"; };
+		BB4707771A1219CF00D549F7 /* RMMapViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMMapViewDelegate.h; sourceTree = "<group>"; };
+		BB4707781A1219CF00D549F7 /* RMMarker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMMarker.h; sourceTree = "<group>"; };
+		BB4707791A1219CF00D549F7 /* RMMBTilesSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMMBTilesSource.h; sourceTree = "<group>"; };
+		BB47077A1A1219CF00D549F7 /* RMMemoryCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMMemoryCache.h; sourceTree = "<group>"; };
+		BB47077B1A1219CF00D549F7 /* RMNotifications.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMNotifications.h; sourceTree = "<group>"; };
+		BB47077C1A1219CF00D549F7 /* RMOpenCycleMapSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMOpenCycleMapSource.h; sourceTree = "<group>"; };
+		BB47077D1A1219CF00D549F7 /* RMOpenSeaMapLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMOpenSeaMapLayer.h; sourceTree = "<group>"; };
+		BB47077E1A1219CF00D549F7 /* RMOpenSeaMapSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMOpenSeaMapSource.h; sourceTree = "<group>"; };
+		BB47077F1A1219CF00D549F7 /* RMOpenStreetMapSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMOpenStreetMapSource.h; sourceTree = "<group>"; };
+		BB4707801A1219CF00D549F7 /* RMPixel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMPixel.h; sourceTree = "<group>"; };
+		BB4707811A1219CF00D549F7 /* RMPointAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMPointAnnotation.h; sourceTree = "<group>"; };
+		BB4707821A1219CF00D549F7 /* RMPolygonAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMPolygonAnnotation.h; sourceTree = "<group>"; };
+		BB4707831A1219CF00D549F7 /* RMPolylineAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMPolylineAnnotation.h; sourceTree = "<group>"; };
+		BB4707841A1219CF00D549F7 /* RMProjection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMProjection.h; sourceTree = "<group>"; };
+		BB4707851A1219CF00D549F7 /* RMQuadTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMQuadTree.h; sourceTree = "<group>"; };
+		BB4707861A1219CF00D549F7 /* RMShape.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMShape.h; sourceTree = "<group>"; };
+		BB4707871A1219CF00D549F7 /* RMShapeAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMShapeAnnotation.h; sourceTree = "<group>"; };
+		BB4707881A1219CF00D549F7 /* RMStaticMapView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMStaticMapView.h; sourceTree = "<group>"; };
+		BB4707891A1219CF00D549F7 /* RMTile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMTile.h; sourceTree = "<group>"; };
+		BB47078A1A1219CF00D549F7 /* RMTileCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMTileCache.h; sourceTree = "<group>"; };
+		BB47078B1A1219CF00D549F7 /* RMTileCacheDownloadOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMTileCacheDownloadOperation.h; sourceTree = "<group>"; };
+		BB47078C1A1219CF00D549F7 /* RMTileImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMTileImage.h; sourceTree = "<group>"; };
+		BB47078D1A1219CF00D549F7 /* RMTileMillSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMTileMillSource.h; sourceTree = "<group>"; };
+		BB47078E1A1219CF00D549F7 /* RMTileSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMTileSource.h; sourceTree = "<group>"; };
+		BB47078F1A1219CF00D549F7 /* RMTileSourcesContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMTileSourcesContainer.h; sourceTree = "<group>"; };
+		BB4707901A1219CF00D549F7 /* RMUserLocation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMUserLocation.h; sourceTree = "<group>"; };
+		BB4707911A1219CF00D549F7 /* RMUserTrackingBarButtonItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMUserTrackingBarButtonItem.h; sourceTree = "<group>"; };
+		BB4707921A1219CF00D549F7 /* libMapbox.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMapbox.a; sourceTree = "<group>"; };
+		D2AAC07E0554694100DB518D /* libUaMapbox.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUaMapbox.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D2AAC07C0554694100DB518D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
+				BB4707931A1219E900D549F7 /* libMapbox.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034768DFFF38A50411DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2AAC07E0554694100DB518D /* libUaMapbox.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0867D691FE84028FC02AAC07 /* TiMapbox */ = {
+			isa = PBXGroup;
+			children = (
+				BB4707581A1219CF00D549F7 /* Mapbox */,
+				08FB77AEFE84172EC02AAC07 /* Classes */,
+				32C88DFF0371C24200C91783 /* Other Sources */,
+				0867D69AFE84028FC02AAC07 /* Frameworks */,
+				034768DFFF38A50411DB9C8B /* Products */,
+			);
+			name = TiMapbox;
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AACBBE490F95108600F1A2B1 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		08FB77AEFE84172EC02AAC07 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				24DE9E0F11C5FE74003F90F6 /* UaMapboxModuleAssets.h */,
+				24DE9E1011C5FE74003F90F6 /* UaMapboxModuleAssets.m */,
+				24DD6CF71134B3F500162E58 /* UaMapboxModule.h */,
+				24DD6CF81134B3F500162E58 /* UaMapboxModule.m */,
+				BB4707501A1217CD00D549F7 /* UaMapboxMapViewProxy.h */,
+				BB4707511A1217CD00D549F7 /* UaMapboxMapViewProxy.m */,
+				BB4707541A1217EF00D549F7 /* UaMapboxMapView.h */,
+				BB4707551A1217EF00D549F7 /* UaMapboxMapView.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		32C88DFF0371C24200C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				AA747D9E0F9514B9006C5449 /* UaMapbox_Prefix.pch */,
+				24DD6D1B1134B66800162E58 /* titanium.xcconfig */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		BB4707581A1219CF00D549F7 /* Mapbox */ = {
+			isa = PBXGroup;
+			children = (
+				BB4707591A1219CF00D549F7 /* Headers */,
+				BB4707921A1219CF00D549F7 /* libMapbox.a */,
+			);
+			path = Mapbox;
+			sourceTree = "<group>";
+		};
+		BB4707591A1219CF00D549F7 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				BB47075A1A1219CF00D549F7 /* Mapbox.h */,
+				BB47075B1A1219CF00D549F7 /* RMAbstractMercatorTileSource.h */,
+				BB47075C1A1219CF00D549F7 /* RMAbstractWebMapSource.h */,
+				BB47075D1A1219CF00D549F7 /* RMAnnotation.h */,
+				BB47075E1A1219CF00D549F7 /* RMAttributionViewController.h */,
+				BB47075F1A1219CF00D549F7 /* RMBingSource.h */,
+				BB4707601A1219CF00D549F7 /* RMCacheObject.h */,
+				BB4707611A1219CF00D549F7 /* RMCircle.h */,
+				BB4707621A1219CF00D549F7 /* RMCircleAnnotation.h */,
+				BB4707631A1219CF00D549F7 /* RMCompositeSource.h */,
+				BB4707641A1219CF00D549F7 /* RMConfiguration.h */,
+				BB4707651A1219CF00D549F7 /* RMCoordinateGridSource.h */,
+				BB4707661A1219CF00D549F7 /* RMDatabaseCache.h */,
+				BB4707671A1219CF00D549F7 /* RMDBMapSource.h */,
+				BB4707681A1219CF00D549F7 /* RMFoundation.h */,
+				BB4707691A1219CF00D549F7 /* RMFractalTileProjection.h */,
+				BB47076A1A1219CF00D549F7 /* RMGenericMapSource.h */,
+				BB47076B1A1219CF00D549F7 /* RMGlobalConstants.h */,
+				BB47076C1A1219CF00D549F7 /* RMGreatCircleAnnotation.h */,
+				BB47076D1A1219CF00D549F7 /* RMInteractiveSource.h */,
+				BB47076E1A1219CF00D549F7 /* RMLoadingTileView.h */,
+				BB47076F1A1219CF00D549F7 /* RMMapboxSource.h */,
+				BB4707701A1219CF00D549F7 /* RMMapLayer.h */,
+				BB4707711A1219CF00D549F7 /* RMMapOverlayView.h */,
+				BB4707721A1219CF00D549F7 /* RMMapQuestOpenAerialSource.h */,
+				BB4707731A1219CF00D549F7 /* RMMapQuestOSMSource.h */,
+				BB4707741A1219CF00D549F7 /* RMMapScrollView.h */,
+				BB4707751A1219CF00D549F7 /* RMMapTiledLayerView.h */,
+				BB4707761A1219CF00D549F7 /* RMMapView.h */,
+				BB4707771A1219CF00D549F7 /* RMMapViewDelegate.h */,
+				BB4707781A1219CF00D549F7 /* RMMarker.h */,
+				BB4707791A1219CF00D549F7 /* RMMBTilesSource.h */,
+				BB47077A1A1219CF00D549F7 /* RMMemoryCache.h */,
+				BB47077B1A1219CF00D549F7 /* RMNotifications.h */,
+				BB47077C1A1219CF00D549F7 /* RMOpenCycleMapSource.h */,
+				BB47077D1A1219CF00D549F7 /* RMOpenSeaMapLayer.h */,
+				BB47077E1A1219CF00D549F7 /* RMOpenSeaMapSource.h */,
+				BB47077F1A1219CF00D549F7 /* RMOpenStreetMapSource.h */,
+				BB4707801A1219CF00D549F7 /* RMPixel.h */,
+				BB4707811A1219CF00D549F7 /* RMPointAnnotation.h */,
+				BB4707821A1219CF00D549F7 /* RMPolygonAnnotation.h */,
+				BB4707831A1219CF00D549F7 /* RMPolylineAnnotation.h */,
+				BB4707841A1219CF00D549F7 /* RMProjection.h */,
+				BB4707851A1219CF00D549F7 /* RMQuadTree.h */,
+				BB4707861A1219CF00D549F7 /* RMShape.h */,
+				BB4707871A1219CF00D549F7 /* RMShapeAnnotation.h */,
+				BB4707881A1219CF00D549F7 /* RMStaticMapView.h */,
+				BB4707891A1219CF00D549F7 /* RMTile.h */,
+				BB47078A1A1219CF00D549F7 /* RMTileCache.h */,
+				BB47078B1A1219CF00D549F7 /* RMTileCacheDownloadOperation.h */,
+				BB47078C1A1219CF00D549F7 /* RMTileImage.h */,
+				BB47078D1A1219CF00D549F7 /* RMTileMillSource.h */,
+				BB47078E1A1219CF00D549F7 /* RMTileSource.h */,
+				BB47078F1A1219CF00D549F7 /* RMTileSourcesContainer.h */,
+				BB4707901A1219CF00D549F7 /* RMUserLocation.h */,
+				BB4707911A1219CF00D549F7 /* RMUserTrackingBarButtonItem.h */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D2AAC07A0554694100DB518D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB4707941A1219F700D549F7 /* Mapbox.h in Headers */,
+				BB4707561A1217EF00D549F7 /* UaMapboxMapView.h in Headers */,
+				BB4707521A1217CD00D549F7 /* UaMapboxMapViewProxy.h in Headers */,
+				AA747D9F0F9514B9006C5449 /* UaMapbox_Prefix.pch in Headers */,
+				24DD6CF91134B3F500162E58 /* UaMapboxModule.h in Headers */,
+				24DE9E1111C5FE74003F90F6 /* UaMapboxModuleAssets.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D2AAC07D0554694100DB518D /* TiMapbox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "TiMapbox" */;
+			buildPhases = (
+				D2AAC07A0554694100DB518D /* Headers */,
+				D2AAC07B0554694100DB518D /* Sources */,
+				D2AAC07C0554694100DB518D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TiMapbox;
+			productName = TiMapbox;
+			productReference = D2AAC07E0554694100DB518D /* libUaMapbox.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+			};
+			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "TiMapbox" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 0867D691FE84028FC02AAC07 /* TiMapbox */;
+			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D2AAC07D0554694100DB518D /* TiMapbox */,
+				24416B8111C4CA220047AFDD /* Build & Test */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24416B8011C4CA220047AFDD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here\n\npython \"${TITANIUM_SDK}/titanium.py\" run --dir=\"${PROJECT_DIR}\"\nexit $?\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D2AAC07B0554694100DB518D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB4707531A1217CD00D549F7 /* UaMapboxMapViewProxy.m in Sources */,
+				24DD6CFA1134B3F500162E58 /* UaMapboxModule.m in Sources */,
+				BB4707571A1217EF00D549F7 /* UaMapboxMapView.m in Sources */,
+				24DE9E1211C5FE74003F90F6 /* UaMapboxModuleAssets.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		24416B8511C4CA280047AFDD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2AAC07D0554694100DB518D /* TiMapbox */;
+			targetProxy = 24416B8411C4CA280047AFDD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB921F08733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DSTROOT = /tmp/UaMapbox.dst;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = UaMapbox_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = NO;
+				GCC_WARN_MISSING_PARENTHESES = NO;
+				GCC_WARN_SHADOW = NO;
+				GCC_WARN_STRICT_SELECTOR_MATCH = NO;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/Mapbox";
+				OTHER_CFLAGS = (
+					"-DDEBUG",
+					"-DTI_POST_1_2",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = UaMapbox;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Debug;
+		};
+		1DEB922008733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DSTROOT = /tmp/UaMapbox.dst;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = UaMapbox_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = NO;
+				GCC_WARN_MISSING_PARENTHESES = NO;
+				GCC_WARN_SHADOW = NO;
+				GCC_WARN_STRICT_SELECTOR_MATCH = NO;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				INSTALL_PATH = /usr/local/lib;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/Mapbox";
+				OTHER_CFLAGS = "-DTI_POST_1_2";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = UaMapbox;
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Release;
+		};
+		1DEB922308733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "libstdc++";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DSTROOT = /tmp/UaMapbox.dst;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = UaMapbox_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = NO;
+				GCC_WARN_MISSING_PARENTHESES = NO;
+				GCC_WARN_SHADOW = NO;
+				GCC_WARN_STRICT_SELECTOR_MATCH = NO;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				INSTALL_PATH = /usr/local/lib;
+				OTHER_CFLAGS = (
+					"-DDEBUG",
+					"-DTI_POST_1_2",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = UaMapbox;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Debug;
+		};
+		1DEB922408733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LIBRARY = "libstdc++";
+				DSTROOT = /tmp/UaMapbox.dst;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = UaMapbox_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = NO;
+				GCC_WARN_MISSING_PARENTHESES = NO;
+				GCC_WARN_SHADOW = NO;
+				GCC_WARN_STRICT_SELECTOR_MATCH = NO;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				INSTALL_PATH = /usr/local/lib;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				OTHER_CFLAGS = "-DTI_POST_1_2";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = UaMapbox;
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Release;
+		};
+		24416B8211C4CA220047AFDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = "Build & test";
+			};
+			name = Debug;
+		};
+		24416B8311C4CA220047AFDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = "Build & test";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "TiMapbox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB921F08733DC00010E9CD /* Debug */,
+				1DEB922008733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "TiMapbox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB922308733DC00010E9CD /* Debug */,
+				1DEB922408733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24416B8A11C4CA520047AFDD /* Build configuration list for PBXAggregateTarget "Build & Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24416B8211C4CA220047AFDD /* Debug */,
+				24416B8311C4CA220047AFDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}

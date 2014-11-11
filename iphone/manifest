@@ -1,0 +1,17 @@
+#
+# this is your module manifest and used by Titanium
+# during compilation, packaging, distribution, etc.
+#
+version: 1.0.0
+apiversion: 2
+description: TiMapbox
+author: Jonatan Lundin
+license: Specify your license
+copyright: Copyright (c) 2014 by Your Company
+
+# these should not be edited
+name: TiMapbox
+moduleid: ua.mapbox
+guid: fb31619e-639b-469f-b37f-643708668d42
+platform: iphone
+minsdk: 3.4.0.GA
