@@ -22,6 +22,6 @@
 @property (nonatomic, readwrite, assign) BOOL placed;
 @property (nonatomic, readonly) CGPoint offset;
 
--(RMAnnotation *)annotation;
+-(RMAnnotation *)annotationForMapView:(RMMapView *)mapView;
 
 @end

@@ -193,13 +193,13 @@
 -(void)addAnnotation:(id)args
 {
     UaMapboxAnnotationProxy *annotationProxy = [self annotationFromArg:args];
-    [mapView addAnnotation:[annotationProxy annotation]];
+    [mapView addAnnotation:[annotationProxy annotationForMapView:mapView]];
 }
 
 -(void)removeAnnotation:(id)proxy
 {
     ENSURE_SINGLE_ARG(proxy, UaMapboxAnnotationProxy);
-    [mapView removeAnnotation:[(UaMapboxAnnotationProxy *)proxy annotation]];
+    [mapView removeAnnotation:[(UaMapboxAnnotationProxy *)proxy annotationForMapView:mapView]];
 }
 
 -(void)removeAllAnnotations
