@@ -24,11 +24,6 @@
     TiThreadPerformOnMainThread(^{[(UaMapboxMapView *)[self view] addShape:arg];}, NO);
 }
 
--(void)clearTileCache:(id)unused
-{
-    TiThreadPerformOnMainThread(^{[(UaMapboxMapView *)[self view] clearOfflineCache:unused];}, NO);
-}
-
 -(void)removeAnnotation:(id)arg
 {
     TiThreadPerformOnMainThread(^{[(UaMapboxMapView *)[self view] removeAnnotation:arg];}, NO);

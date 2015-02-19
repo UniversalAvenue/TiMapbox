@@ -66,19 +66,19 @@
 
 -(void)refreshIfNeeded
 {
-    @synchronized(self)
-    {
-        if (!needsRefreshing)
-        {
-            return; //Already done.
-        }
-        if (delegate!=nil && [delegate viewAttached])
-        {
-            [(UaMapboxMapView*)[delegate view] refreshAnnotation:self readd:needsRefreshingWithSelection];
-        }
-        needsRefreshing = NO;
-        needsRefreshingWithSelection = NO;
-    }
+//    @synchronized(self)
+//    {
+//        if (!needsRefreshing)
+//        {
+//            return; //Already done.
+//        }
+//        if (delegate!=nil && [delegate viewAttached])
+//        {
+//            [(UaMapboxMapView*)[delegate view] refreshAnnotation:self readd:needsRefreshingWithSelection];
+//        }
+//        needsRefreshing = NO;
+//        needsRefreshingWithSelection = NO;
+//    }
 }
 
 #pragma mark Public APIs

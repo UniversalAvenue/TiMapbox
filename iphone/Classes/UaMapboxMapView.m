@@ -37,14 +37,6 @@
     NSLog(@"[VIEW LIFECYCLE EVENT] configurationSet");
 }
 
--(void)dealloc
-{
-    RELEASE_TO_NIL(mapView);
-    [super dealloc];
-    
-    NSLog(@"[VIEW LIFECYCLE EVENT] dealloc");
-}
-
 -(void)willMoveToSuperview:(UIView *)newSuperview
 {
     NSLog(@"[VIEW LIFECYCLE EVENT] willMoveToSuperview");

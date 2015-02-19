@@ -9,7 +9,7 @@
 @interface UaMapboxAnnotationProxy : TiProxy {
 @private
     int tag;
-    UaMapboxMapView *delegate;
+    UaMapboxMapView *__weak delegate;
     BOOL needsRefreshing;
     BOOL needsRefreshingWithSelection;
     BOOL placed;
@@ -18,7 +18,7 @@
 
 // Center latitude and longitude of the annotion view.
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
-@property (nonatomic, readwrite, assign) UaMapboxMapView *delegate;
+@property (nonatomic, readwrite, weak) UaMapboxMapView *delegate;
 @property (nonatomic,readonly)	BOOL needsRefreshingWithSelection;
 @property (nonatomic, readwrite, assign) BOOL placed;
 @property (nonatomic, readonly) CGPoint offset;
