@@ -5,13 +5,12 @@
  * Please see the LICENSE included with this distribution for details.
  */
 #import "TiProxy.h"
-#import "UaMapboxMapView.m"
+#import "UaMapboxMapView.h"
+
 @interface UaMapboxAnnotationProxy : TiProxy {
 @private
-    int tag;
     UaMapboxMapView *__weak delegate;
-    BOOL needsRefreshing;
-    BOOL needsRefreshingWithSelection;
+    RMAnnotation *annotation;
     BOOL placed;
     CGPoint offset;
 }
@@ -19,13 +18,10 @@
 // Center latitude and longitude of the annotion view.
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
 @property (nonatomic, readwrite, weak) UaMapboxMapView *delegate;
-@property (nonatomic,readonly)	BOOL needsRefreshingWithSelection;
+@property (nonatomic, readonly)	BOOL needsRefreshingWithSelection;
 @property (nonatomic, readwrite, assign) BOOL placed;
 @property (nonatomic, readonly) CGPoint offset;
 
-// Title and subtitle for use by selection UI.
-- (NSString *)title;
-- (NSString *)subtitle;
-- (int)tag;
+-(RMAnnotation *)annotation;
 
 @end

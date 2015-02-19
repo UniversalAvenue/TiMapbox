@@ -17,6 +17,6 @@
 -(void)addShape:(id)args;
 -(void)clearTileCache:(id)args;
 -(void)removeAnnotation:(id)args;
--(void)removeAllAnnotations:(id)args;
+-(void)removeAllAnnotations;
 
 @end

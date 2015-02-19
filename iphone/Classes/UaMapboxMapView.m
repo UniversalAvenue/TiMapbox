@@ -5,6 +5,7 @@
  * Please see the LICENSE included with this distribution for details.
  */
 
+#import "UaMapboxAnnotationProxy.h"
 #import "UaMapboxMapView.h"
 #import "TiUtils.h"
 #import "Mapbox.h"
@@ -181,48 +182,28 @@
              };
 }
 
-#pragma mark Public Methods
--(void)clearTileCache:(id)args
-{
-    [mapView removeAllCachedImages];
-}
-
 #pragma mark Annotations
 
-//add annotation via setter
--(void)setAnnotation_:(id)args
+-(UaMapboxAnnotationProxy *)annotationFromArg:(id)arg
 {
-    [self addAnnotation:args];
+    return [(UaMapboxMapView *)[self proxy] annotationFromArg:arg];
 }
 
--(void)removeAnnotation:(id)args
+//add annotation via public api
+-(void)addAnnotation:(id)args
 {
-    ENSURE_SINGLE_ARG(args,NSObject);
-    NSString *title;
-    
-    if ([args isKindOfClass:[NSString class]])
-    {
-        title = [TiUtils stringValue:args];
-    }
-    else if([args isKindOfClass:[NSDictionary class]]){
-        title = [TiUtils stringValue:[args objectForKey:@"title"]];
-    }
-    for (RMAnnotation *an in mapView.annotations)
-    {
-        if(!an.isUserLocationAnnotation)
-        {
-            if ([title isEqualToString:an.title])
-            {
-                TiThreadPerformOnMainThread(^{[mapView removeAnnotation:an];}, NO);
-                break;
-            }
-        }
-    }
+    UaMapboxAnnotationProxy *annotationProxy = [self annotationFromArg:args];
+    [mapView addAnnotation:[annotationProxy annotation]];
 }
 
--(void)removeAllAnnotations:(id)args
+-(void)removeAnnotation:(id)proxy
 {
-    ENSURE_UI_THREAD(removeAllAnnotations, args);
+    ENSURE_SINGLE_ARG(proxy, UaMapboxAnnotationProxy);
+    [mapView removeAnnotation:[(UaMapboxAnnotationProxy *)proxy annotation]];
+}
+
+-(void)removeAllAnnotations
+{
     [mapView removeAllAnnotations];
 }
 
@@ -281,30 +262,6 @@
         
         [self.proxy fireEvent:@"tapOnAnnotation" withObject:event];
     }
-}
-
-//add annotation via public api
--(void)addAnnotation:(id)args
-{
-    ENSURE_TYPE(args,NSDictionary);
-    ENSURE_UI_THREAD(addAnnotation,args);
-    
-    RMAnnotation *annotation = [[RMAnnotation alloc]
-                                initWithMapView:mapView
-                                coordinate:CLLocationCoordinate2DMake([TiUtils floatValue:[args objectForKey:@"latitude"]],[TiUtils floatValue:[args objectForKey:@"longitude"]])
-                                andTitle:[TiUtils stringValue:[args objectForKey:@"title"]]
-                                ];
-    
-    annotation.subtitle = [TiUtils stringValue:[args objectForKey:@"subtitle"]];
-    
-    //Attach all data for use when creating the layer for the annotation
-    NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
-                              args, @"args",
-                              @"Marker", @"type", nil];
-    
-    annotation.userInfo = userInfo;
-    
-    [mapView addAnnotation:annotation];
 }
 
 //parts of addShape from https://github.com/benbahrenburg/benCoding.Map addPolygon method Apache License 2.0
