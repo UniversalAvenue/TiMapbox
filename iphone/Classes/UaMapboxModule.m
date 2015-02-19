@@ -6,6 +6,9 @@
  */
 
 #import "UaMapboxModule.h"
+
+#import "RMConfiguration.h"
+
 #import "TiBase.h"
 #import "TiHost.h"
 #import "TiUtils.h"
@@ -82,11 +85,14 @@
 
 #pragma Public APIs
 
-//TODO: make a proper Annotation proxy
--(id)createAnnotation:(id)args
+-(void)setAccessToken:(id)args
 {
-    ENSURE_SINGLE_ARG(args,NSDictionary);
-    return args;
+    ENSURE_STRING(args);
+
+    NSString *accessToken = [NSString stringWithString:args];
+    TiThreadPerformOnMainThread(^{
+        [[RMConfiguration sharedInstance] setAccessToken:accessToken];
+    }, YES);
 }
 
 MAKE_SYSTEM_STR(LINE_JOIN_MITER, kCALineJoinMiter);
