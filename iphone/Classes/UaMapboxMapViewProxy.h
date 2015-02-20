@@ -13,5 +13,6 @@
 }
 
 -(UaMapboxAnnotationProxy *)annotationFromArg:(id)arg;
+-(id)coordinateFromPoint:(id)arg;
 
 @end

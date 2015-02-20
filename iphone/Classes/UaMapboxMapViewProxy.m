@@ -30,7 +30,7 @@
 
 -(void)addAnnotation:(id)arg
 {
-    ENSURE_SINGLE_ARG(arg, NSDictionary);
+    ENSURE_SINGLE_ARG(arg, UaMapboxAnnotationProxy);
     TiThreadPerformOnMainThread(^{
         [(UaMapboxMapView *)[self view] addAnnotation:arg];
     }, NO);
@@ -56,7 +56,7 @@
 
 -(void)removeAnnotation:(id)arg
 {
-    ENSURE_SINGLE_ARG(arg, NSDictionary);
+    ENSURE_SINGLE_ARG(arg, UaMapboxAnnotationProxy);
     TiThreadPerformOnMainThread(^{
         [(UaMapboxMapView *)[self view] removeAnnotation:arg];
     }, NO);
@@ -77,5 +77,16 @@
     TiThreadPerformOnMainThread(^{
         [(UaMapboxMapView *)[self view] removeAllAnnotations];
     }, NO);
+}
+
+-(id)coordinateFromPoint:(id)args
+{
+    NSNumber *x;
+    NSNumber *y;
+
+    ENSURE_ARG_AT_INDEX(x, args, 0, NSNumber);
+    ENSURE_ARG_AT_INDEX(y, args, 1, NSNumber);
+
+    return [(UaMapboxMapView *)[self view] coordinateFromPoint:CGPointMake([x floatValue], [y floatValue])];
 }
 @end

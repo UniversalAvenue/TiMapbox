@@ -182,6 +182,15 @@
              };
 }
 
+-(NSDictionary *)coordinateFromPoint:(CGPoint)point
+{
+    CLLocationCoordinate2D coordinate = [mapView pixelToCoordinate:point];
+    return @{
+             @"latitude": [NSNumber numberWithDouble:coordinate.latitude],
+             @"longitude": [NSNumber numberWithDouble:coordinate.longitude]
+             };
+}
+
 #pragma mark Annotations
 
 -(UaMapboxAnnotationProxy *)annotationFromArg:(id)arg
