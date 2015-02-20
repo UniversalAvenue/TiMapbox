@@ -147,9 +147,9 @@
     CLLocationDegrees longitudeDelta = [(NSString *)[region valueForKey:@"latitudeDelta"] doubleValue];
 
     RMSphericalTrapezium bounds;
-    bounds.northEast.latitude = latitude - latitudeDelta / 2;
+    bounds.northEast.latitude = latitude + latitudeDelta / 2;
     bounds.northEast.longitude = longitude + longitudeDelta / 2;
-    bounds.southWest.latitude = latitude + latitudeDelta / 2;
+    bounds.southWest.latitude = latitude - latitudeDelta / 2;
     bounds.southWest.longitude = longitude - longitudeDelta / 2;
     
     NSLog(@"setRegion with bounds: northEast.latitude: %d, northEast.longitude: %d, southWest.latitude: %d, southWest.longitude: %d, from latitude: %d, longitude: %d, latitudeDelta: %d, longitudeDelta: %d",
@@ -169,8 +169,8 @@
 
     NSLog(@"getRegion with bounds: northEast.latitude: %d, northEast.longitude: %d, southWest.latitude: %d, southWest.longitude: %d", bounds.northEast.latitude, bounds.northEast.longitude, bounds.southWest.latitude, bounds.southWest.longitude)
     
-    CLLocationDegrees latitude = bounds.northEast.latitude + bounds.southWest.latitude / 2;
-    CLLocationDegrees longitude = bounds.northEast.longitude + bounds.southWest.longitude / 2;
+    CLLocationDegrees latitude = mapView.centerCoordinate.latitude;
+    CLLocationDegrees longitude = mapView.centerCoordinate.longitude;
     CLLocationDegrees latitudeDelta = fabs(bounds.northEast.latitude - bounds.southWest.latitude);
     CLLocationDegrees longitudeDelta = fabs(bounds.northEast.longitude - bounds.southWest.longitude);
     
