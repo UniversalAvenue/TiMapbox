@@ -235,10 +235,9 @@
     }
 }
 
-- (void)mapViewRegionDidChange:(RMMapView *)map
+- (void)afterMapMove:(RMMapView *)map byUser:(BOOL)wasUserAction
 {
     if ([self.proxy _hasListeners:@"regionChange"]) {
-        
         NSDictionary *event = [self getRegion_];
         [self.proxy fireEvent:@"regionChange" withObject:event];
     }
