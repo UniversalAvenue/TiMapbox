@@ -213,11 +213,14 @@
 - (void)longPressOnMap:(RMMapView *)map at:(CGPoint)point
 {
     if ([self.proxy _hasListeners:@"longPress"]) {
-        NSDictionary *event = [NSDictionary dictionaryWithObjectsAndKeys:
-                               [NSString stringWithFormat:@"%f",[mapView pixelToCoordinate:point].longitude],@"longitude",
-                               [NSString stringWithFormat:@"%f",[mapView pixelToCoordinate:point].latitude],@"latitude",
-                               nil
-                               ];
+        CLLocationCoordinate2D location = [mapView pixelToCoordinate:point];
+        
+        NSDictionary *event = @{
+                                @"annotation": [NSNull null],
+                                @"map": [self proxy],
+                                @"latitude": [NSNumber numberWithDouble:[mapView pixelToCoordinate:point].latitude],
+                                @"longitude": [NSNumber numberWithDouble:[mapView pixelToCoordinate:point].longitude],
+                                };
         
         [self.proxy fireEvent:@"longPress" withObject:event];
     }
@@ -227,14 +230,12 @@
 {
     if ([self.proxy _hasListeners:@"regionChange"]) {
         
-        NSDictionary *event = [NSDictionary dictionaryWithObjectsAndKeys:
-                               [NSString stringWithFormat:@"%f",[map centerCoordinate].latitude], @"latitude",
-                               [NSString stringWithFormat:@"%f",[map centerCoordinate].longitude], @"longitude",nil];
+        NSDictionary *event = [self getRegion_];
         [self.proxy fireEvent:@"regionChange" withObject:event];
     }
 }
 
-- (void)singleTapOnMap:(RMMapView *)mapView at:(CGPoint)point
+- (void)singleTapOnMap:(RMMapView *)_mapView at:(CGPoint)point
 {
     // The event listeners for a view are actually attached to the view proxy.
     // You must reference 'self.proxy' to get the proxy for this view
@@ -243,12 +244,14 @@
     // is about to fired. There could be zero or multiple listeners for the
     // specified event.
     if ([self.proxy _hasListeners:@"singleTap"]) {
+        CLLocationCoordinate2D location = [mapView pixelToCoordinate:point];
         
-        NSDictionary *event = [NSDictionary dictionaryWithObjectsAndKeys:
-                               [NSString stringWithFormat:@"%f",[mapView pixelToCoordinate:point].longitude],@"longitude",
-                               [NSString stringWithFormat:@"%f",[mapView pixelToCoordinate:point].latitude],@"latitude",
-                               nil
-                               ];
+        NSDictionary *event = @{
+                                @"annotation": [NSNull null],
+                                @"map": [self proxy],
+                                @"latitude": [NSNumber numberWithDouble:[mapView pixelToCoordinate:point].latitude],
+                                @"longitude": [NSNumber numberWithDouble:[mapView pixelToCoordinate:point].longitude],
+                                };
         
         [self.proxy fireEvent:@"singleTap" withObject:event];
     }
@@ -257,10 +260,20 @@
 -(void)tapOnAnnotation:(RMAnnotation *)annotation onMap:(RMMapView *)map
 {
     if ([self.proxy _hasListeners:@"tapOnAnnotation"]) {
-        
-        NSDictionary *event = [annotation.userInfo objectForKey:@"args"];
-        
-        [self.proxy fireEvent:@"tapOnAnnotation" withObject:event];
+        if ([annotation isKindOfClass:[UaMapboxAnnotation class]]) {
+            UaMapboxAnnotationProxy *annotationProxy = [(UaMapboxAnnotation *)annotation proxy];
+            
+            NSDictionary *event = @{
+                                    @"annotation": annotationProxy,
+                                    @"map": [self proxy],
+                                    @"latitude": [NSNumber numberWithDouble:annotation.coordinate.latitude],
+                                    @"longitude": [NSNumber numberWithDouble:annotation.coordinate.longitude],
+                                    };
+            
+            [self.proxy fireEvent:@"tapOnAnnotation" withObject:event];
+        } else {
+            NSLog(@"tapOnAnnotation: unknown annotation type");
+        }
     }
 }
 
