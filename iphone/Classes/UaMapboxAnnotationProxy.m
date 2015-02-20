@@ -6,8 +6,6 @@
  */
 
 #import "UaMapboxAnnotationProxy.h"
-#import "UaMapboxAnnotation.h"
-#import "UaMapboxMapView.h"
 #import "TiUtils.h"
 
 @implementation UaMapboxAnnotationProxy
@@ -65,6 +63,7 @@
     if (annotation == nil) {
         NSString *title = [TiUtils stringValue:[self valueForUndefinedKey:@"title"]];
         annotation = [[UaMapboxAnnotation alloc] initWithMapView:mapView coordinate:[self coordinate] andTitle:title];
+        [annotation setProxy:self];
     }
     
     return annotation;

@@ -9,5 +9,5 @@
 #import "UaMapboxAnnotation.h"
 
 @implementation UaMapboxAnnotation
-
+@synthesize proxy;
 @end

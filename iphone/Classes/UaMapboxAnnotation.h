@@ -8,6 +8,11 @@
 
 #import "RMPointAnnotation.h"
 
-@interface UaMapboxAnnotation : RMPointAnnotation
+@class UaMapboxAnnotationProxy;
+
+@interface UaMapboxAnnotation : RMPointAnnotation {
+}
+
+@property (nonatomic, weak) UaMapboxAnnotationProxy* proxy;
 
 @end

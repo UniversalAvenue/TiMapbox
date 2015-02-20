@@ -6,11 +6,12 @@
  */
 #import "TiProxy.h"
 #import "UaMapboxMapView.h"
+#import "UaMapboxAnnotation.h"
 
 @interface UaMapboxAnnotationProxy : TiProxy {
 @private
     UaMapboxMapView *__weak delegate;
-    RMAnnotation *annotation;
+    UaMapboxAnnotation *annotation;
     BOOL placed;
     CGPoint offset;
 }
