@@ -139,7 +139,7 @@
     ENSURE_DICT(args);
     NSDictionary *region = (NSDictionary *) args;
     
-    NSLog(@"args = %@", args);
+    NSLog(@"setRegion with args %@", args);
     
     CLLocationDegrees latitude = [(NSString *)[region valueForKey:@"latitude"] doubleValue];
     CLLocationDegrees longitude = [(NSString *)[region valueForKey:@"longitude"] doubleValue];
@@ -152,10 +152,6 @@
     bounds.southWest.latitude = latitude - latitudeDelta / 2;
     bounds.southWest.longitude = longitude - longitudeDelta / 2;
     
-    NSLog(@"setRegion with bounds: northEast.latitude: %d, northEast.longitude: %d, southWest.latitude: %d, southWest.longitude: %d, from latitude: %d, longitude: %d, latitudeDelta: %d, longitudeDelta: %d",
-          bounds.northEast.latitude, bounds.northEast.longitude, bounds.southWest.latitude, bounds.southWest.longitude,
-          latitude, longitude, latitudeDelta, longitudeDelta);
-    
     [mapView zoomWithLatitudeLongitudeBoundsSouthWest:bounds.southWest
                                             northEast:bounds.northEast
                                              animated:[TiUtils boolValue:@"animated"
@@ -166,8 +162,6 @@
 -(id)getRegion_
 {
     RMSphericalTrapezium bounds = [mapView latitudeLongitudeBoundingBox];
-
-    NSLog(@"getRegion with bounds: northEast.latitude: %d, northEast.longitude: %d, southWest.latitude: %d, southWest.longitude: %d", bounds.northEast.latitude, bounds.northEast.longitude, bounds.southWest.latitude, bounds.southWest.longitude)
     
     CLLocationDegrees latitude = mapView.centerCoordinate.latitude;
     CLLocationDegrees longitude = mapView.centerCoordinate.longitude;
