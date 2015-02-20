@@ -20,4 +20,6 @@
 -(void)removeAnnotation:(id)args;
 -(void)removeAllAnnotations;
 
+@property (readonly) RMMapView* mapView;
+
 @end

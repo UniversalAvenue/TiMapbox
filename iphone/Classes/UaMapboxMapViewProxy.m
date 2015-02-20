@@ -79,6 +79,28 @@
     }, NO);
 }
 
+- (void)selectAnnotation:(id)arg
+{
+    ENSURE_SINGLE_ARG(arg, UaMapboxAnnotationProxy);
+    TiThreadPerformOnMainThread(^{
+        RMMapView *map = [(UaMapboxMapView *)[self view] mapView];
+        if (map != nil) {
+            [map selectAnnotation:[(UaMapboxAnnotationProxy *)arg annotationForMapView:map] animated:NO];
+        }
+    }, NO);
+}
+
+- (void)deselectAnnotation:(id)arg
+{
+    ENSURE_SINGLE_ARG(arg, UaMapboxAnnotationProxy);
+    TiThreadPerformOnMainThread(^{
+        RMMapView *map = [(UaMapboxMapView *)[self view] mapView];
+        if (map != nil) {
+            [map deselectAnnotation:[(UaMapboxAnnotationProxy *)arg annotationForMapView:map] animated:NO];
+        }
+    }, NO);
+}
+
 -(id)coordinateFromPoint:(id)args
 {
     NSNumber *x;
