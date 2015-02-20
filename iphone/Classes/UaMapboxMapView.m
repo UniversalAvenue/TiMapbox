@@ -334,7 +334,7 @@
 
 
 //This event that adds layer for any annotation created with RMAnnotation
-- (RMMapLayer *)mapView:(RMMapView *)mapView layerForAnnotation:(RMAnnotation *)annotation
+- (RMMapLayer *)mapView:(RMMapView *)map layerForAnnotation:(RMAnnotation *)annotation
 {
     //check for user location annotation
     if (annotation.isUserLocationAnnotation)
@@ -355,7 +355,7 @@
     }
 }
 
-- (RMMapLayer *)markerLayer:(RMMapView *)mapView userInfo:(NSDictionary *)userInfo
+- (RMMapLayer *)markerLayer:(RMMapView *)map userInfo:(NSDictionary *)userInfo
 {
     RMMarker *marker = [[RMMarker alloc] initWithMapboxMarkerImage:nil tintColor:([TiUtils isIOS7OrGreater] ? mapView.tintColor : nil)];
     NSDictionary *args = [userInfo objectForKey:@"args"];
@@ -367,7 +367,7 @@
     return marker;
 }
 
-- (RMMapLayer *)shapeLayer:(RMMapView *)mapView userInfo:(NSDictionary *)userInfo
+- (RMMapLayer *)shapeLayer:(RMMapView *)map userInfo:(NSDictionary *)userInfo
 {
     RMShape *shape = [[RMShape alloc] initWithView:mapView];
     NSDictionary *args = [userInfo objectForKey:@"args"];
