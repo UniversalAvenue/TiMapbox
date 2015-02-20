@@ -7,11 +7,13 @@
 #import "TiProxy.h"
 #import "UaMapboxMapView.h"
 #import "UaMapboxAnnotation.h"
+#import "UaMapboxMarker.h"
 
 @interface UaMapboxAnnotationProxy : TiProxy {
 @private
     UaMapboxMapView *__weak delegate;
     UaMapboxAnnotation *annotation;
+    UaMapboxMarker *marker;
     BOOL placed;
     CGPoint offset;
 }
@@ -23,6 +25,7 @@
 @property (nonatomic, readwrite, assign) BOOL placed;
 @property (nonatomic, readonly) CGPoint offset;
 
--(RMAnnotation *)annotationForMapView:(RMMapView *)mapView;
+-(UaMapboxMarker *)marker;
+-(UaMapboxAnnotation *)annotationForMapView:(RMMapView *)map;
 
 @end

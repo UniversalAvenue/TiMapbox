@@ -36,8 +36,10 @@
 		BB4707941A1219F700D549F7 /* Mapbox.h in Headers */ = {isa = PBXBuildFile; fileRef = BB47075A1A1219CF00D549F7 /* Mapbox.h */; };
 		BB4707971A12384A00D549F7 /* UaMapboxAnnotationProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = BB4707951A12384A00D549F7 /* UaMapboxAnnotationProxy.h */; };
 		BB4707981A12384A00D549F7 /* UaMapboxAnnotationProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4707961A12384A00D549F7 /* UaMapboxAnnotationProxy.m */; };
-		BB47079B1A1238BE00D549F7 /* UaMapboxAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = BB4707991A1238BE00D549F7 /* UaMapboxAnnotation.h */; };
-		BB47079C1A1238BE00D549F7 /* UaMapboxAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = BB47079A1A1238BE00D549F7 /* UaMapboxAnnotation.m */; };
+		BB47079B1A1238BE00D549F7 /* UaMapboxMarker.h in Headers */ = {isa = PBXBuildFile; fileRef = BB4707991A1238BE00D549F7 /* UaMapboxMarker.h */; };
+		BB47079C1A1238BE00D549F7 /* UaMapboxMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = BB47079A1A1238BE00D549F7 /* UaMapboxMarker.m */; };
+		BB6C1AB21A977DAF00C350EE /* UaMapboxAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = BB6C1AB11A977DAF00C350EE /* UaMapboxAnnotation.h */; };
+		BB6C1AB41A977DBC00C350EE /* UaMapboxAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6C1AB31A977DBC00C350EE /* UaMapboxAnnotation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,8 +123,10 @@
 		BB4707921A1219CF00D549F7 /* libMapbox.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMapbox.a; sourceTree = "<group>"; };
 		BB4707951A12384A00D549F7 /* UaMapboxAnnotationProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UaMapboxAnnotationProxy.h; path = Classes/UaMapboxAnnotationProxy.h; sourceTree = "<group>"; };
 		BB4707961A12384A00D549F7 /* UaMapboxAnnotationProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UaMapboxAnnotationProxy.m; path = Classes/UaMapboxAnnotationProxy.m; sourceTree = "<group>"; };
-		BB4707991A1238BE00D549F7 /* UaMapboxAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UaMapboxAnnotation.h; path = Classes/UaMapboxAnnotation.h; sourceTree = "<group>"; };
-		BB47079A1A1238BE00D549F7 /* UaMapboxAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UaMapboxAnnotation.m; path = Classes/UaMapboxAnnotation.m; sourceTree = "<group>"; };
+		BB4707991A1238BE00D549F7 /* UaMapboxMarker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UaMapboxMarker.h; path = Classes/UaMapboxMarker.h; sourceTree = "<group>"; };
+		BB47079A1A1238BE00D549F7 /* UaMapboxMarker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UaMapboxMarker.m; path = Classes/UaMapboxMarker.m; sourceTree = "<group>"; };
+		BB6C1AB11A977DAF00C350EE /* UaMapboxAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UaMapboxAnnotation.h; path = Classes/UaMapboxAnnotation.h; sourceTree = "<group>"; };
+		BB6C1AB31A977DBC00C350EE /* UaMapboxAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UaMapboxAnnotation.m; path = Classes/UaMapboxAnnotation.m; sourceTree = "<group>"; };
 		D2AAC07E0554694100DB518D /* libUaMapbox.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUaMapbox.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -180,8 +184,10 @@
 				BB4707551A1217EF00D549F7 /* UaMapboxMapView.m */,
 				BB4707951A12384A00D549F7 /* UaMapboxAnnotationProxy.h */,
 				BB4707961A12384A00D549F7 /* UaMapboxAnnotationProxy.m */,
-				BB4707991A1238BE00D549F7 /* UaMapboxAnnotation.h */,
-				BB47079A1A1238BE00D549F7 /* UaMapboxAnnotation.m */,
+				BB6C1AB11A977DAF00C350EE /* UaMapboxAnnotation.h */,
+				BB6C1AB31A977DBC00C350EE /* UaMapboxAnnotation.m */,
+				BB4707991A1238BE00D549F7 /* UaMapboxMarker.h */,
+				BB47079A1A1238BE00D549F7 /* UaMapboxMarker.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -274,12 +280,13 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB6C1AB21A977DAF00C350EE /* UaMapboxAnnotation.h in Headers */,
 				BB4707941A1219F700D549F7 /* Mapbox.h in Headers */,
 				BB4707561A1217EF00D549F7 /* UaMapboxMapView.h in Headers */,
 				BB4707521A1217CD00D549F7 /* UaMapboxMapViewProxy.h in Headers */,
 				AA747D9F0F9514B9006C5449 /* UaMapbox_Prefix.pch in Headers */,
 				BB4707971A12384A00D549F7 /* UaMapboxAnnotationProxy.h in Headers */,
-				BB47079B1A1238BE00D549F7 /* UaMapboxAnnotation.h in Headers */,
+				BB47079B1A1238BE00D549F7 /* UaMapboxMarker.h in Headers */,
 				24DD6CF91134B3F500162E58 /* UaMapboxModule.h in Headers */,
 				24DE9E1111C5FE74003F90F6 /* UaMapboxModuleAssets.h in Headers */,
 			);
@@ -355,11 +362,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB6C1AB41A977DBC00C350EE /* UaMapboxAnnotation.m in Sources */,
 				BB4707531A1217CD00D549F7 /* UaMapboxMapViewProxy.m in Sources */,
 				24DD6CFA1134B3F500162E58 /* UaMapboxModule.m in Sources */,
 				BB4707981A12384A00D549F7 /* UaMapboxAnnotationProxy.m in Sources */,
 				BB4707571A1217EF00D549F7 /* UaMapboxMapView.m in Sources */,
-				BB47079C1A1238BE00D549F7 /* UaMapboxAnnotation.m in Sources */,
+				BB47079C1A1238BE00D549F7 /* UaMapboxMarker.m in Sources */,
 				24DE9E1211C5FE74003F90F6 /* UaMapboxModuleAssets.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

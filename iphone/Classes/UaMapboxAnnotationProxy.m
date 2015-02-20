@@ -56,16 +56,48 @@
 {
     id current = [self valueForUndefinedKey:@"image"];
     [self replaceValue:image forKey:@"image" notification:NO];
+
+    if (marker) {
+        [marker replaceUIImage:[TiUtils image:image proxy:self]];
+    }
 }
 
--(RMAnnotation *)annotationForMapView:(RMMapView *)mapView
+-(RMMarker *)marker
 {
-    if (annotation == nil) {
-        NSString *title = [TiUtils stringValue:[self valueForUndefinedKey:@"title"]];
-        annotation = [[UaMapboxAnnotation alloc] initWithMapView:mapView coordinate:[self coordinate] andTitle:title];
+    if (marker == nil) {
+        CGPoint anchorPoint;
+        id image = [self valueForUndefinedKey:@"image"];
+        id point = [self valueForUndefinedKey:@"anchorPoint"];
+        
+        NSLog(@"layer with image %@, ap %@", image, point);
+        
+        if (image != nil) {
+            ENSURE_TYPE_OR_NIL(point, NSDictionary);
+            
+            if (point != nil) {
+                anchorPoint = CGPointMake(
+                                          [TiUtils floatValue:@"x" properties:point],
+                                          [TiUtils floatValue:@"y" properties:point]
+                                          );
+            } else {
+                anchorPoint = CGPointMake(0.5f, 0);
+            }
+            
+            marker = [[UaMapboxMarker alloc] initWithUIImage:[TiUtils image:image proxy:self] anchorPoint:anchorPoint];
+        } else {
+            marker = [[UaMapboxMarker alloc] initWithMapboxMarkerImage:nil tintColor:nil];
+        }
+    }
+    return marker;
+}
+
+-(UaMapboxAnnotation *)annotationForMapView:(RMMapView *)map
+{
+    if (!annotation) {
+        annotation = [[UaMapboxAnnotation alloc] initWithMapView:map coordinate:[self coordinate] andTitle:nil];
         [annotation setProxy:self];
     }
-    
     return annotation;
 }
+
 @end
